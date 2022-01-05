@@ -1,2 +1,2 @@
 # WebGL forrit
- Forrit í Tölvugrafík vor 2022
+ Sýniforrit í Tölvugrafík vor 2022
