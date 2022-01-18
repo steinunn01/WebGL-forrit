@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////
-//    Sýnisforrit í dæmi 1 í HD2 í Tölvugrafík
+//    Sýnisforrit í Tölvugrafík
 //     7-laga form teiknað með TRIANGLE-FAN
 //
 //    Hjálmtýr Hafsteinsson, janúar 2022
