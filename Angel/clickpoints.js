@@ -1,9 +1,9 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Teiknar punkt á strigann şar sem notandinn smellir
-//     meğ músinni
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     Teiknar punkt Ã¡ strigann Ã¾ar sem notandinn smellir
+//     meÃ° mÃºsinni
 //
-//    Hjálmtır Hafsteinsson, janúar 2020
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2020
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;

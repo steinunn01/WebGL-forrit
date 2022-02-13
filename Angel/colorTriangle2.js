@@ -1,9 +1,9 @@
 /////////////////////////////////////////////////////////////////
-//    Sýnidæmi í Tölvugrafík
-//     Sýnir notkun hnútahnit og hnútalita í sitthvoru
-//     minnissvæðinu (buffers) í GPU
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     SÃ½nir notkun hnÃºtahnit og hnÃºtalita Ã­ sitthvoru
+//     minnissvÃ¦Ã°inu (buffers) Ã­ GPU
 //
-//    Hjálmtýr Hafsteinsson, janúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;
@@ -28,7 +28,7 @@ window.onload = function init() {
     gl.useProgram( program );
     
 
-    // Tökum frá pláss fyrir hnútahnitin og tengjum við litarabreytuna vPosition    
+    // TÃ¶kum frÃ¡ plÃ¡ss fyrir hnÃºtahnitin og tengjum viÃ° litarabreytuna vPosition    
     var vBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, vBuffer);
     gl.bufferData( gl.ARRAY_BUFFER, flatten(vertices), gl.STATIC_DRAW );
@@ -37,7 +37,7 @@ window.onload = function init() {
     gl.vertexAttribPointer(vPosition, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(vPosition);
     
-    // Tökum frá pláss fyrir hnútalitina og tengjum við litarabreytuna vColor    
+    // TÃ¶kum frÃ¡ plÃ¡ss fyrir hnÃºtalitina og tengjum viÃ° litarabreytuna vColor    
     var cBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, cBuffer );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(colors), gl.STATIC_DRAW );

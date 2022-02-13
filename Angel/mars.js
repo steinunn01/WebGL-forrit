@@ -1,8 +1,8 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Jörğ og Mars snúast um sólina (allt teningar!)
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     JÃ¶rÃ° og Mars snÃºast um sÃ³lina (allt teningar!)
 //
-//    Hjálmtır Hafsteinsson, febrúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, febrÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;
@@ -136,10 +136,10 @@ window.onload = function init()
     // Event listener for keyboard
      window.addEventListener("keydown", function(e){
          switch( e.keyCode ) {
-            case 38:	// upp ör
+            case 38:	// upp Ã¶r
                 zDist += 0.1;
                 break;
-            case 40:	// niğur ör
+            case 40:	// niÃ°ur Ã¶r
                 zDist -= 0.1;
                 break;
          }
@@ -165,22 +165,22 @@ function render()
     var mvstack = [];
 
     rotDay += 10.0;
-    rotYear += 0.5;        // ekki rétta gildiğ, en lítur betur út!
-    rotMars += 0.23;        // nokkuğ rétt miğağ viğ hrağa jarğar
+    rotYear += 0.5;        // ekki rÃ©tta gildiÃ°, en lÃ­tur betur Ãºt!
+    rotMars += 0.23;        // nokkuÃ° rÃ©tt miÃ°aÃ° viÃ° hraÃ°a jarÃ°ar
     
-    // stağsetja áhorfanda og meğhöndla músarhreyfingu
+    // staÃ°setja Ã¡horfanda og meÃ°hÃ¶ndla mÃºsarhreyfingu
     var mv = lookAt( vec3(0.0, 0.0, zDist), vec3(0.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0) );
     mv = mult( mv, rotateX( spinX ) );
     mv = mult( mv, rotateY( spinY ) );
     
-    // teikna "sólina"
+    // teikna "sÃ³lina"
     mvstack.push(mv);
     mv = mult( mv, scalem( 0.5, 0.5, 0.5 ) );
     gl.uniformMatrix4fv(mvLoc, false, flatten(mv));
     gl.drawElements( gl.TRIANGLES, numVertices, gl.UNSIGNED_BYTE, 0 );
     mv = mvstack.pop();
 
-    // teikna "jörğina"
+    // teikna "jÃ¶rÃ°ina"
     mvstack.push(mv);
       mv = mult( mv, rotateY( rotYear ) );
       mv = mult( mv, translate( 0.85, 0.0, 0.0 ) );
@@ -196,11 +196,11 @@ function render()
 
     // teikna "Mars"
     mvstack.push(mv);
-      mv = mult( mv, rotateZ( 30.0 ) );         // Halli á sporbraut Mars (á ağ vera 1.5 gráğa!)
+      mv = mult( mv, rotateZ( 30.0 ) );         // Halli Ã¡ sporbraut Mars (Ã¡ aÃ° vera 1.5 grÃ¡Ã°a!)
       mv = mult( mv, rotateY( rotMars ) );
       mv = mult( mv, translate( 1.05, 0.0, 0.0 ) );
       mv = mult( mv, rotateZ( MarsTilt ) );
-      mv = mult( mv, rotateY( rotDay ) );       // Snúningur Mars er næstum sá sami og jarğarinnar
+      mv = mult( mv, rotateY( rotDay ) );       // SnÃºningur Mars er nÃ¦stum sÃ¡ sami og jarÃ°arinnar
 
       mvstack.push(mv);
       mv = mult( mv, scalem( 0.07, 0.07, 0.07 ) );

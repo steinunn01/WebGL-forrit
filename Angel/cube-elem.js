@@ -1,9 +1,9 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Teningur skilgreindur meğ hnútum og hliğum.  Teiknağur
-//     meğ gl.drawElements
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     Teningur skilgreindur meÃ° hnÃºtum og hliÃ°um.  TeiknaÃ°ur
+//     meÃ° gl.drawElements
 //
-//    Hjálmtır Hafsteinsson, febrúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, febrÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;

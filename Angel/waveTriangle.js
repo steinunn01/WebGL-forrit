@@ -1,10 +1,10 @@
 ////////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Hnútalitarinn notar "uniform" tímabreytu til ağ færa y-hnit
-//     hnútanna á reglulegan hátt.  Einnig hægt ağ breyta lit meğ
-//     músarsmelli.
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     HnÃºtalitarinn notar "uniform" tÃ­mabreytu til aÃ° fÃ¦ra y-hnit
+//     hnÃºtanna Ã¡ reglulegan hÃ¡tt.  Einnig hÃ¦gt aÃ° breyta lit meÃ°
+//     mÃºsarsmelli.
 //
-//    Hjálmtır Hafsteinsson, janúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2022
 ////////////////////////////////////////////////////////////////////
 var gl;
 var points;

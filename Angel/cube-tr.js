@@ -1,9 +1,9 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Sınir şegar snúningur (rotate) er gerğur á undan hliğrun
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     SÃ½nir Ã¾egar snÃºningur (rotate) er gerÃ°ur Ã¡ undan hliÃ°run
 //     (translate)
 //
-//    Hjálmtır Hafsteinsson, febrúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, febrÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;

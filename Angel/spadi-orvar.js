@@ -1,8 +1,8 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Sınir notkun á lyklaborğsatburğum til ağ hreyfa spağa
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     SÃ½nir notkun Ã¡ lyklaborÃ°satburÃ°um til aÃ° hreyfa spaÃ°a
 //
-//    Hjálmtır Hafsteinsson, janúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;
@@ -44,10 +44,10 @@ window.onload = function init() {
     // Event listener for keyboard
     window.addEventListener("keydown", function(e){
         switch( e.keyCode ) {
-            case 37:	// vinstri ör
+            case 37:	// vinstri Ã¶r
                 xmove = -0.04;
                 break;
-            case 39:	// hægri ör
+            case 39:	// hÃ¦gri Ã¶r
                 xmove = 0.04;
                 break;
             default:

@@ -1,15 +1,15 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Teiknar punkt á strigann şar sem notandinn smellir músinni
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     Teiknar punkt Ã¡ strigann Ã¾ar sem notandinn smellir mÃºsinni
 //
-//    Hjálmtır Hafsteinsson, janúar 2021
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2021
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;
 
 
-var maxNumPoints = 200;       // Hámarksfjöldi punkta sem forritiğ ræğur viğ!
-var index = 0;                // Númer núverandi punkts
+var maxNumPoints = 200;       // HÃ¡marksfjÃ¶ldi punkta sem forritiÃ° rÃ¦Ã°ur viÃ°!
+var index = 0;                // NÃºmer nÃºverandi punkts
 
 window.onload = function init() {
 
@@ -28,7 +28,7 @@ window.onload = function init() {
     gl.useProgram( program );
     
     
-    // Tökum frá minnispláss í grafíkminni fyrir maxNumPoints tvívíğ hnit (float er 4 bæti)
+    // TÃ¶kum frÃ¡ minnisplÃ¡ss Ã­ grafÃ­kminni fyrir maxNumPoints tvÃ­vÃ­Ã° hnit (float er 4 bÃ¦ti)
     var vBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, vBuffer);
     gl.bufferData(gl.ARRAY_BUFFER, 8*maxNumPoints, gl.DYNAMIC_DRAW);
@@ -37,15 +37,15 @@ window.onload = function init() {
     gl.vertexAttribPointer(vPosition, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(vPosition);
     
-    // Meğhöndlun á músarsmellum
+    // MeÃ°hÃ¶ndlun Ã¡ mÃºsarsmellum
     canvas.addEventListener("mousedown", function(e){
 
         gl.bindBuffer( gl.ARRAY_BUFFER, vBuffer);
         
-        // Reikna heimshnit músarinnar út frá skjáhnitum
+        // Reikna heimshnit mÃºsarinnar Ãºt frÃ¡ skjÃ¡hnitum
         var t = vec2(2*e.offsetX/canvas.width-1, 2*(canvas.height-e.offsetY)/canvas.height-1);
         
-        // Færa şessi hnit yfir í grafíkminni, á réttan stağ
+        // FÃ¦ra Ã¾essi hnit yfir Ã­ grafÃ­kminni, Ã¡ rÃ©ttan staÃ°
         gl.bufferSubData(gl.ARRAY_BUFFER, 8*index, flatten(t));
 
         index++;

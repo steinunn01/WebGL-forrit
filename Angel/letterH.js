@@ -1,8 +1,8 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Búum til bókstafinn H úr şremur teningum
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     BÃºum til bÃ³kstafinn H Ãºr Ã¾remur teningum
 //
-//    Hjálmtır Hafsteinsson, febrúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, febrÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;

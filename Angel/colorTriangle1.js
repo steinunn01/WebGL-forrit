@@ -1,9 +1,9 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Sınir notkun hnútahnit og hnútalita fléttuğ saman í sama
-//     minnissvæğinu (buffers) í GPU
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     SÃ½nir notkun hnÃºtahnit og hnÃºtalita flÃ©ttuÃ° saman Ã­ sama
+//     minnissvÃ¦Ã°inu (buffers) Ã­ GPU
 //
-//    Hjálmtır Hafsteinsson, janúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;
@@ -27,17 +27,17 @@ window.onload = function init() {
     var program = initShaders( gl, "vertex-shader", "fragment-shader" );
     gl.useProgram( program );
     
-    // Tökum frá pláss og sendum hnútagögnin yfir
+    // TÃ¶kum frÃ¡ plÃ¡ss og sendum hnÃºtagÃ¶gnin yfir
     var vBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, vBuffer);
     gl.bufferData( gl.ARRAY_BUFFER, flatten(vertices), gl.STATIC_DRAW );
     
-    // Tengjum hnitin viğ litarabreytuna vPosition (ath. nú er "stride" 32, şví şağ er stærğ blokkarinnar)
+    // Tengjum hnitin viÃ° litarabreytuna vPosition (ath. nÃº er "stride" 32, Ã¾vÃ­ Ã¾aÃ° er stÃ¦rÃ° blokkarinnar)
     var vPosition = gl.getAttribLocation(program, "vPosition");
     gl.vertexAttribPointer(vPosition, 4, gl.FLOAT, false, 4*8, 0);
     gl.enableVertexAttribArray(vPosition);
     
-    // Tengjum litina viğ litarabreytuna vColor (ath. nú er "stride" 32 og "offset" 16 şví şağ er stærğ hnitanna)
+    // Tengjum litina viÃ° litarabreytuna vColor (ath. nÃº er "stride" 32 og "offset" 16 Ã¾vÃ­ Ã¾aÃ° er stÃ¦rÃ° hnitanna)
     var vColor = gl.getAttribLocation( program, "vColor" );
     gl.vertexAttribPointer( vColor, 4, gl.FLOAT, false, 4*8, 4*4 );
     gl.enableVertexAttribArray( vColor );

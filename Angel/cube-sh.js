@@ -1,9 +1,9 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Hnútalitari er látinn reikna snúning út frá breytunni
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     HnÃºtalitari er lÃ¡tinn reikna snÃºning Ãºt frÃ¡ breytunni
 //     theta, sem er send yfir
 //
-//    Hjálmtır Hafsteinsson, febrúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, febrÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;

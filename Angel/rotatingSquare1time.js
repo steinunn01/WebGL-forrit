@@ -1,11 +1,11 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Hagkvæm ağferğ til ağ snúa ferningi.  Hækka snúningsgráğu
-//     í JS forriti og senda hana yfir í GPU í hverri ítrun og
-//     láta litara reikna nı hnit (sendum bara eina breytu).
-//     Notar setTimeout til ağ stıra hrağa forritsins
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     HagkvÃ¦m aÃ°ferÃ° til aÃ° snÃºa ferningi.  HÃ¦kka snÃºningsgrÃ¡Ã°u
+//     Ã­ JS forriti og senda hana yfir Ã­ GPU Ã­ hverri Ã­trun og
+//     lÃ¡ta litara reikna nÃ½ hnit (sendum bara eina breytu).
+//     Notar setTimeout til aÃ° stÃ½ra hraÃ°a forritsins
 //
-//    Hjálmtır Hafsteinsson, janúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2022
 /////////////////////////////////////////////////////////////////
 "use strict";
 var canvas;

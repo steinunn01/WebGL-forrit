@@ -1,10 +1,10 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Sınir notkun á tveimur minnissvæğum (VBO) og hvernig şau
-//     eru virkjuğ rétt fyrir teikningu í render().
-//     Tvö VBO teiknuğ meğ sömu liturum (og "uniform" breytu)
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     SÃ½nir notkun Ã¡ tveimur minnissvÃ¦Ã°um (VBO) og hvernig Ã¾au
+//     eru virkjuÃ° rÃ©tt fyrir teikningu Ã­ render().
+//     TvÃ¶ VBO teiknuÃ° meÃ° sÃ¶mu liturum (og "uniform" breytu)
 //
-//    Hjálmtır Hafsteinsson, janúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2022
 /////////////////////////////////////////////////////////////////
 var gl;
 

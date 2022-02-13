@@ -1,28 +1,28 @@
 /////////////////////////////////////////////////////////////////
-//    Sýnidæmi í Tölvugrafík
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
 //     Ferningur skoppar um gluggann.  Notandi getur breytt
-//     hraðanum með upp/niður örvum.
+//     hraÃ°anum meÃ° upp/niÃ°ur Ã¶rvum.
 //
-//    Hjálmtýr Hafsteinsson, janúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;
 
-// Núverandi staðsetning miðju ferningsins
+// NÃºverandi staÃ°setning miÃ°ju ferningsins
 var box = vec2( 0.0, 0.0 );
 
-// Stefna (og hraði) fernings
+// Stefna (og hraÃ°i) fernings
 var dX;
 var dY;
 
-// Svæðið er frá -maxX til maxX og -maxY til maxY
+// SvÃ¦Ã°iÃ° er frÃ¡ -maxX til maxX og -maxY til maxY
 var maxX = 1.0;
 var maxY = 1.0;
 
-// Hálf breidd/hæð ferningsins
+// HÃ¡lf breidd/hÃ¦Ã° ferningsins
 var boxRad = 0.05;
 
-// Ferningurinn er upphaflega í miðjunni
+// Ferningurinn er upphaflega Ã­ miÃ°junni
 var vertices = new Float32Array([-0.05, -0.05, 0.05, -0.05, 0.05, 0.05, -0.05, 0.05]);
 
 
@@ -36,7 +36,7 @@ window.onload = function init() {
     gl.viewport( 0, 0, canvas.width, canvas.height );
     gl.clearColor( 0.8, 0.8, 0.8, 1.0 );
     
-    // Gefa ferningnum slembistefnu í upphafi
+    // Gefa ferningnum slembistefnu Ã­ upphafi
     dX = Math.random()*0.1-0.05;
     dY = Math.random()*0.1-0.05;
 
@@ -58,14 +58,14 @@ window.onload = function init() {
 
     locBox = gl.getUniformLocation( program, "boxPos" );
 
-    // Meðhöndlun örvalykla
+    // MeÃ°hÃ¶ndlun Ã¶rvalykla
     window.addEventListener("keydown", function(e){
         switch( e.keyCode ) {
-            case 38:	// upp ör
+            case 38:	// upp Ã¶r
                 dX *= 1.1;
                 dY *= 1.1;
                 break;
-            case 40:	// niður ör
+            case 40:	// niÃ°ur Ã¶r
                 dX /= 1.1;
                 dY /= 1.1;
                 break;
@@ -78,11 +78,11 @@ window.onload = function init() {
 
 function render() {
     
-    // Lát ferninginn skoppa af veggjunum
+    // LÃ¡t ferninginn skoppa af veggjunum
     if (Math.abs(box[0] + dX) > maxX - boxRad) dX = -dX;
     if (Math.abs(box[1] + dY) > maxY - boxRad) dY = -dY;
 
-    // Uppfæra staðsetningu
+    // UppfÃ¦ra staÃ°setningu
     box[0] += dX;
     box[1] += dY;
     

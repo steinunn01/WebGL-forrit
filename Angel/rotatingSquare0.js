@@ -1,10 +1,10 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Óhagkvæm ağferğ til ağ snúa ferningi.  Breyta hnitum
-//     allra hnúta í JS forriti og senda nıju hnitin yfir í
-//     GPU í hvert sinn (sendum mikiğ gagnamagn)
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     Ã“hagkvÃ¦m aÃ°ferÃ° til aÃ° snÃºa ferningi.  Breyta hnitum
+//     allra hnÃºta Ã­ JS forriti og senda nÃ½ju hnitin yfir Ã­
+//     GPU Ã­ hvert sinn (sendum mikiÃ° gagnamagn)
 //
-//    Hjálmtır Hafsteinsson, janúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2022
 /////////////////////////////////////////////////////////////////
 "use strict";
 var canvas;

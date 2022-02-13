@@ -1,9 +1,9 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Vörpunarfylki búiğ til í JS og sent yfir til
-//     hnútalitara, sem margfaldar (ş.e. varpar)
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     VÃ¶rpunarfylki bÃºiÃ° til Ã­ JS og sent yfir til
+//     hnÃºtalitara, sem margfaldar (Ã¾.e. varpar)
 //
-//    Hjálmtır Hafsteinsson, febrúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, febrÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;

@@ -1,14 +1,14 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Teikna nálgun á hring sem TRIANGLE_FAN
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     Teikna nÃ¡lgun Ã¡ hring sem TRIANGLE_FAN
 //
-//    Hjálmtır Hafsteinsson, janúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;
 
-// numCirclePoints er fjöldi punkta á hringnum
-// Heildarfjöldi punkta er tveimur meiri (miğpunktur + fyrsti punktur kemur tvisvar)
+// numCirclePoints er fjÃ¶ldi punkta Ã¡ hringnum
+// HeildarfjÃ¶ldi punkta er tveimur meiri (miÃ°punktur + fyrsti punktur kemur tvisvar)
 var numCirclePoints = 20;       
 
 var radius = 0.4;

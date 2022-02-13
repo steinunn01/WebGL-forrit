@@ -1,9 +1,9 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Hvert horn teningsins er meğ tiltekinn lit og hann
-//      blandast viğ lit hinna hornanna yfir hverja hliğ
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     Hvert horn teningsins er meÃ° tiltekinn lit og hann
+//      blandast viÃ° lit hinna hornanna yfir hverja hliÃ°
 //
-//    Hjálmtır Hafsteinsson, febrúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, febrÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;

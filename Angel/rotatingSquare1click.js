@@ -1,10 +1,10 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Snúningi á ferningi er stjórnağ meğ vinstri/hægri
-//     músarsmelli (ath. slökkt á "context menu" viğ
-//     skilgreiningu á canvas)
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     SnÃºningi Ã¡ ferningi er stjÃ³rnaÃ° meÃ° vinstri/hÃ¦gri
+//     mÃºsarsmelli (ath. slÃ¶kkt Ã¡ "context menu" viÃ°
+//     skilgreiningu Ã¡ canvas)
 //
-//    Hjálmtır Hafsteinsson, janúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, janÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;

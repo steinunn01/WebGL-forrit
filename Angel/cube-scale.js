@@ -1,8 +1,8 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Notandi getur snúiğ, hliğrağ og kvarğağ tening
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     Notandi getur snÃºiÃ°, hliÃ°raÃ° og kvarÃ°aÃ° tening
 //
-//    Hjálmtır Hafsteinsson, febrúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, febrÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;
@@ -99,10 +99,10 @@ window.onload = function init()
             case 16:    // Shift lykill
                 ShiftDown = true;
                 break;
-            case 37:	// vinstri ör
+            case 37:	// vinstri Ã¶r
                 transX -= 0.05;
                 break;
-            case 39:	// hægri ör
+            case 39:	// hÃ¦gri Ã¶r
                 transX += 0.05;
                 break;
         }

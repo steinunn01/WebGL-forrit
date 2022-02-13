@@ -1,8 +1,8 @@
 /////////////////////////////////////////////////////////////////
-//    Sınidæmi í Tölvugrafík
-//     Jörğin (sem teningur!) snıst um sólina (stærri teningur!)
+//    SÃ½nidÃ¦mi Ã­ TÃ¶lvugrafÃ­k
+//     JÃ¶rÃ°in (sem teningur!) snÃ½st um sÃ³lina (stÃ¦rri teningur!)
 //
-//    Hjálmtır Hafsteinsson, febrúar 2022
+//    HjÃ¡lmtÃ½r Hafsteinsson, febrÃºar 2022
 /////////////////////////////////////////////////////////////////
 var canvas;
 var gl;
@@ -148,12 +148,12 @@ function render()
     mv = mult( mv, rotateX(spinX) );
     mv = mult( mv, rotateY(spinY) );
 
-    // teikna "sólina"
+    // teikna "sÃ³lina"
     mv = mult( mv, scalem( 0.5, 0.5, 0.5 ) );
     gl.uniformMatrix4fv(matrixLoc, false, flatten(mv));
     gl.drawArrays( gl.TRIANGLES, 0, numVertices );
 
-    // teikna "jörğina"
+    // teikna "jÃ¶rÃ°ina"
     mv = mult( mv, rotateY( rotYear ) );
     mv = mult( mv, translate( 1.8, 0.0, 0.0 ) );
     mv = mult( mv, rotateZ( earthTilt ) );
