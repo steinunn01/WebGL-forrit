@@ -5,6 +5,7 @@
 //     Bíll sem keyrir í hringi í umhverfi með húsum.  Hægt að
 //    breyta sjónarhorni áhorfanda með því að slá á 1, 2, ..., 8.
 //    Einnig hægt að breyta hæð áhorfanda með upp/niður örvum.
+//    Leiðrétt útgáfa fyrir réttan snúning í MV.js
 //
 //    Hjálmtýr Hafsteinsson, mars 2022
 ////////////////////////////////////////////////////////////////////
@@ -292,7 +293,7 @@ function render()
 	    mv = lookAt( vec3(250.0, 0.0, 100.0+height), vec3(0.0, 0.0, 0.0), vec3(0.0, 0.0, 1.0) );
 	    drawScenery( mv );
 	    mv = mult( mv, translate( carXPos, carYPos, 0.0 ) );
-	    mv = mult( mv, rotateZ( carDirection ) ) ;
+	    mv = mult( mv, rotateZ( -carDirection ) ) ;
 	    drawCar( mv );
 	    break;
 	case 2:
@@ -300,7 +301,7 @@ function render()
 	    mv = lookAt( vec3(75.0, 0.0, 5.0+height), vec3(carXPos, carYPos, 0.0), vec3(0.0, 0.0, 1.0 ) );
 	    drawScenery( mv );
 	    mv = mult( mv, translate(carXPos, carYPos, 0.0) );
-	    mv = mult( mv, rotateZ( carDirection ) ) ;
+	    mv = mult( mv, rotateZ( -carDirection ) ) ;
 	    drawCar( mv );
 	    break;
 	case 3:
@@ -308,23 +309,23 @@ function render()
 	    mv = lookAt( vec3(125.0, 0.0, 5.0+height), vec3(carXPos, carYPos, 0.0), vec3(0.0, 0.0, 1.0 ) );
 	    drawScenery( mv );
 	    mv = mult( mv, translate(carXPos, carYPos, 0.0) );
-	    mv = mult( mv, rotateZ( carDirection ) ) ;
+	    mv = mult( mv, rotateZ( -carDirection ) ) ;
 	    drawCar( mv );
 	    break;
 	case 4:
 	    // Driver's point of view.
 	    mv = lookAt( vec3(-3.0, 0.0, 5.0+height), vec3(12.0, 0.0, 2.0+height), vec3(0.0, 0.0, 1.0 ) );
 	    drawCar( mv );
-	    mv = mult( mv, rotateZ( -carDirection ) );
+	    mv = mult( mv, rotateZ( carDirection ) );
 	    mv = mult( mv, translate(-carXPos, -carYPos, 0.0) );
 	    drawScenery( mv );
 	    break;
 	case 5:
 	    // Drive around while looking at a house at (40, 120)
-	    mv = rotateY( carDirection );
+	    mv = rotateY( -carDirection );
 	    mv = mult( mv, lookAt( vec3(3.0, 0.0, 5.0+height), vec3(40.0-carXPos, 120.0-carYPos, 0.0), vec3(0.0, 0.0, 1.0 ) ) );
 	    drawCar( mv );
-	    mv = mult( mv, rotateZ( -carDirection ) );
+	    mv = mult( mv, rotateZ( carDirection ) );
 	    mv = mult( mv, translate(-carXPos, -carYPos, 0.0) );
 	    drawScenery( mv );
 	    break;
@@ -332,7 +333,7 @@ function render()
 	    // Behind and above the car
 	    mv = lookAt( vec3(-12.0, 0.0, 6.0+height), vec3(15.0, 0.0, 4.0), vec3(0.0, 0.0, 1.0 ) );
 	    drawCar( mv );
-	    mv = mult( mv, rotateZ( -carDirection ) );
+	    mv = mult( mv, rotateZ( carDirection ) );
 	    mv = mult( mv, translate(-carXPos, -carYPos, 0.0) );
 	    drawScenery( mv );
 	    break;
@@ -340,7 +341,7 @@ function render()
 	    // View backwards looking from another car
 	    mv = lookAt( vec3(25.0, 5.0, 5.0+height), vec3(0.0, 0.0, 2.0), vec3(0.0, 0.0, 1.0 ) );
 	    drawCar( mv );
-	    mv = mult( mv, rotateZ( -carDirection ) );
+	    mv = mult( mv, rotateZ( carDirection ) );
 	    mv = mult( mv, translate(-carXPos, -carYPos, 0.0) );
 	    drawScenery( mv );
 	    break;
@@ -348,7 +349,7 @@ function render()
 	    // View from beside the car
 	    mv = lookAt( vec3(2.0, 20.0, 5.0+height), vec3(2.0, 0.0, 2.0), vec3(0.0, 0.0, 1.0 ) );
 	    drawCar( mv );
-	    mv = mult( mv, rotateZ( -carDirection ) );
+	    mv = mult( mv, rotateZ( carDirection ) );
 	    mv = mult( mv, translate(-carXPos, -carYPos, 0.0) );
 	    drawScenery( mv );
 	    break;
