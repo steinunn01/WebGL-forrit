@@ -1,8 +1,9 @@
 /////////////////////////////////////////////////////////////////
 //    Sýnidæmi í Tölvugrafík
-//     Einföld útgáfa af mynsturvörpun.  Tvívítt spjald
-//     skilgreint og varpað á það mynd sem er lesin inn.
-//     Hægt að snúa spjaldinu og færa til.
+//     Sýnir mismunandi útgáfur af síun (filter) í mynsturvörpun.
+//     Tvívíður veggur er skilgreindur og varpað á hann mynd sem er
+//     lesin inn.  Hægt að snúa spjaldinu og færa til.
+//     Nú líka með ójafnhliða (anisotropic) síun.
 //
 //    Hjálmtýr Hafsteinsson, mars 2022
 /////////////////////////////////////////////////////////////////
@@ -14,9 +15,13 @@ var numVertices  = 6;
 var program;
 
 var pointsArray = [];
+var colorsArray = [];
 var texCoordsArray = [];
 
 var texture;
+
+var anisotropyExtension = null;
+var anisotropyMax;
 
 var movement = false;
 var spinX = 0;
@@ -24,35 +29,29 @@ var spinY = 0;
 var origX;
 var origY;
 
-var zDist = 5.0;
+var zDist = -5.0;
 
 var proLoc;
 var mvLoc;
 
-//    4-------3  2
-//    |     /  / |
-//    |   /  /   |       
-//    | /  /     |
-//    5  0-------1
-//
 // Tveir þríhyrningar sem mynda spjald í z=0 planinu
 var vertices = [
-    vec4( -1.0, -1.0, 0.0, 1.0 ),      // neðri vinstri
-    vec4(  1.0, -1.0, 0.0, 1.0 ),      // neðri hægri
-    vec4(  1.0,  1.0, 0.0, 1.0 ),      // efri hægri
-    vec4(  1.0,  1.0, 0.0, 1.0 ),
-    vec4( -1.0,  1.0, 0.0, 1.0 ),
-    vec4( -1.0, -1.0, 0.0, 1.0 )
+    vec4( -30.0, -1.0, 0.0, 1.0 ),
+    vec4(  30.0, -1.0, 0.0, 1.0 ),
+    vec4(  30.0,  1.0, 0.0, 1.0 ),
+    vec4(  30.0,  1.0, 0.0, 1.0 ),
+    vec4( -30.0,  1.0, 0.0, 1.0 ),
+    vec4( -30.0, -1.0, 0.0, 1.0 )
 ];
 
 // Mynsturhnit fyrir spjaldið
 var texCoords = [
-    vec2( 0.0, 0.0 ),
-    vec2( 1.0, 0.0 ),
-    vec2( 1.0, 1.0 ),
-    vec2( 1.0, 1.0 ),
-    vec2( 0.0, 1.0 ),
-    vec2( 0.0, 0.0 )
+    vec2(  0.0, 0.0 ),
+    vec2( 60.0, 0.0 ),
+    vec2( 60.0, 2.0 ),
+    vec2( 60.0, 2.0 ),
+    vec2(  0.0, 2.0 ),
+    vec2(  0.0, 0.0 )
 ];
 
 
@@ -62,11 +61,8 @@ function configureTexture( image ) {
     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
     gl.texImage2D( gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image );
     gl.generateMipmap( gl.TEXTURE_2D );
-    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE );
-    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE );
-    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST_MIPMAP_LINEAR );
+    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST );
     gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST );
-//    gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR );
     
     gl.uniform1i(gl.getUniformLocation(program, "texture"), 0);
 }
@@ -106,9 +102,16 @@ window.onload = function init() {
     gl.vertexAttribPointer( vTexCoord, 2, gl.FLOAT, false, 0, 0 );
     gl.enableVertexAttribArray( vTexCoord );
 
-    // Ná í mynstur úr html-skrá:
+    anisotropyExtension = gl.getExtension("EXT_texture_filter_anisotropic");
+    if( anisotropyExtension ) {
+        anisotropyMax = gl.getParameter(anisotropyExtension.MAX_TEXTURE_MAX_ANISOTROPY_EXT);
+    }
+
     var image = document.getElementById("texImage");
     configureTexture( image );
+
+    document.getElementById("MagFilter").innerHTML = "gl.NEAREST";
+    document.getElementById("MinFilter").innerHTML = "gl.NEAREST";
 
 
     proLoc = gl.getUniformLocation( program, "projection" );
@@ -159,7 +162,66 @@ window.onload = function init() {
              zDist -= 0.2;
          }
      }  );  
-       
+
+    // Event listeners for buttons
+    document.getElementById("btnMagNear").onclick = function(){
+        gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST );
+        document.getElementById("MagFilter").innerHTML = "gl.NEAREST";
+        render();
+    };
+
+    document.getElementById("btnMagLinear").onclick = function(){
+        gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR );
+        document.getElementById("MagFilter").innerHTML = "gl.LINEAR";
+        render();
+    };
+
+    document.getElementById("btnNear").onclick = function(){
+        gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST );
+        document.getElementById("MinFilter").innerHTML = "gl.NEAREST";
+        render();
+    };
+
+    document.getElementById("btnLinear").onclick = function(){
+        gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR );
+        document.getElementById("MinFilter").innerHTML = "gl.LINEAR";
+        render();
+    };
+
+    document.getElementById("btnNearNear").onclick = function(){
+        gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST_MIPMAP_NEAREST );
+        document.getElementById("MinFilter").innerHTML = "gl.NEAREST_MIPMAP_NEAREST";
+        render();
+    };
+
+    document.getElementById("btnNearLinear").onclick = function(){
+        gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST_MIPMAP_LINEAR );
+        document.getElementById("MinFilter").innerHTML = "gl.NEAREST_MIPMAP_LINEAR";
+        render();
+    };
+
+    document.getElementById("btnLinearNear").onclick = function(){
+        gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST );
+        document.getElementById("MinFilter").innerHTML = "gl.LINEAR_MIPMAP_NEAREST";
+        render();
+    };
+
+    document.getElementById("btnLinearLinear").onclick = function(){
+        gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR );
+        document.getElementById("MinFilter").innerHTML = "gl.LINEAR_MIPMAP_LINEAR";
+        render();
+    };
+
+    document.getElementById("chkAnisostropic").onchange = function(){
+        if (document.getElementById("chkAnisostropic").checked) {
+            gl.texParameteri(gl.TEXTURE_2D, anisotropyExtension.TEXTURE_MAX_ANISOTROPY_EXT, anisotropyMax);
+        }
+        else {
+            gl.texParameteri(gl.TEXTURE_2D, anisotropyExtension.TEXTURE_MAX_ANISOTROPY_EXT, 1);
+        }
+        render();
+    };
+
     render();
  
 }
