@@ -178,7 +178,7 @@ function render()
 
     // Loks skjárinn sjálfur...
     mv1 = mult( mv, translate( 0.0, 0.3, -0.02 ) );
-    mv1 = mult( mv1, rotateX( -5 ));
+    mv1 = mult( mv1, rotateX( 5 ));
     mv1 = mult( mv1, scalem( 0.7, 0.5, 0.02 ) );
     gl.uniformMatrix4fv(modelViewLoc, false, flatten(mv1));
     gl.drawArrays( gl.TRIANGLES, 0, NumVertices );
