@@ -64,7 +64,7 @@ window.onload = function init() {
 
     // Ná í líkanið
     var PR = PlyReader();
-    var plyData = PR.read("ply_files/duck-n.ply");
+    var plyData = PR.read("duck-n.ply");
 
     vertices = plyData.points;
     normals = plyData.normals;
