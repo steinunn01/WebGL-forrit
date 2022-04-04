@@ -249,8 +249,8 @@ function render()
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
     var ctm = lookAt( vec3(0.0, 0.0, zDist), vec3(0.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0) );
-    ctm = mult( ctm, rotateX( spinX ) );
-    ctm = mult( ctm, rotateY( spinY ) );
+    ctm = mult( ctm, rotateX( -spinX ) );
+    ctm = mult( ctm, rotateY( -spinY ) );
     
     gl.uniformMatrix4fv(mvLoc, false, flatten(ctm));
 

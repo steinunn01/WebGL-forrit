@@ -182,8 +182,8 @@ function render() {
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
     modelViewMatrix = lookAt( vec3(0.0, 0.0, zDist), at, up );
-    modelViewMatrix = mult( modelViewMatrix, rotateY( -spinY ) );
-    modelViewMatrix = mult( modelViewMatrix, rotateX( spinX ) );
+    modelViewMatrix = mult( modelViewMatrix, rotateY( spinY ) );
+    modelViewMatrix = mult( modelViewMatrix, rotateX( -spinX ) );
 
     normalMatrix = [
         vec3(modelViewMatrix[0][0], modelViewMatrix[0][1], modelViewMatrix[0][2]),
