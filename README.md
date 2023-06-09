@@ -1,2 +1,2 @@
 # WebGL forrit
- Sýniforrit í Tölvugrafík vor 2022
+ Sýniforrit í Tölvugrafík haust 2023
