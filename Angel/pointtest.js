@@ -3,7 +3,7 @@
 //     Einfalt forrit sem teiknar 6 punkta á nokkra vegu.  Þarf
 //     að breyta forritskóðanum til að breyta virkni!
 //
-//    Hjálmtýr Hafsteinsson, janúar 2022
+//    Hjálmtýr Hafsteinsson, ágúst 2023
 ///////////////////////////////////////////////////////////////////
 var gl;
 var points;
