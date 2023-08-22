@@ -26,7 +26,7 @@ window.onload = function init()
     //  Configure WebGL
 
     gl.viewport( 0, 0, canvas.width, canvas.height );
-    gl.clearColor( 1.0, 0.9, 1.0, 1.0 );
+    gl.clearColor( 0.9, 0.9, 0.9, 1.0 );
     
     //  Load shaders and initialize attribute buffers
     
@@ -39,7 +39,7 @@ window.onload = function init()
     gl.bindBuffer( gl.ARRAY_BUFFER, bufferId );
     gl.bufferData( gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW );
 
-    // Associate out shader variables with our data buffer
+    // Associate shader variables with our data buffer
     
     var vPosition = gl.getAttribLocation( program, "vPosition" );
     gl.vertexAttribPointer( vPosition, 2, gl.FLOAT, false, 0, 0 );
@@ -52,11 +52,11 @@ window.onload = function init()
 function render() {
     gl.clear( gl.COLOR_BUFFER_BIT );
     
-//    gl.drawArrays( gl.POINTS, 0, 6 );
+    gl.drawArrays( gl.POINTS, 0, 6 );
 //    gl.drawArrays( gl.LINES, 0, 6 );
 //    gl.drawArrays( gl.LINE_STRIP, 0, 6 );
 //    gl.drawArrays( gl.LINE_LOOP, 0, 6 );
 //    gl.drawArrays( gl.TRIANGLES, 0, 6 );
 //    gl.drawArrays( gl.TRIANGLE_STRIP, 0, 6 );
-    gl.drawArrays( gl.TRIANGLE_FAN, 0, 6 );
+//    gl.drawArrays( gl.TRIANGLE_FAN, 0, 6 );
 }
